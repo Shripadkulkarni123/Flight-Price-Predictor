@@ -76,7 +76,7 @@ function FlightPricePredictor() {
     const minDuration = minDurationRoutes[routeKey] || 1; // Default minimum duration is 1 hour
 
     // Calculate time difference
-    const timeDiff = timeOrder[arrival] - timeOrder[departure];
+    let timeDiff = timeOrder[arrival] - timeOrder[departure];
     if (timeDiff < 0) {
       timeDiff += 6; // Add 6 to handle overnight flights
     }

@@ -3,10 +3,11 @@ from flask import Flask, request, jsonify  # For creating the web app and handli
 import pickle  # To load the saved machine learning model
 from datetime import datetime, timedelta  # To work with dates (like calculating days left)
 from flask_cors import CORS  # To allow React frontend to connect to Flask backend
+import numpy as np
 
 # Create a Flask web app
 app = Flask(__name__)
-CORS(app)  # Allow frontend (React) to access backend (Flask)
+CORS(app)  # Allow frontend (React) to connect to backend (Flask)
 
 # Load the trained model from the file
 model = pickle.load(open('model.pkl', 'rb'))
